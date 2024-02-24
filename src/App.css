@@ -84,6 +84,10 @@ body {
   margin: 10px auto;
 }
 
+.download-qr-btn {
+  margin: 5px auto !important;
+}
+
 /* CONTACT */
 .contact-container h2 {
   font-size: 32px;
@@ -91,6 +95,7 @@ body {
 .contact-container {
   width: 80%;
   margin: 20px auto;
+  margin-top: 30px;
 }
 
 .contact-form {
@@ -126,7 +131,8 @@ body {
   border: solid 2px var(--ccc);
 }
 
-.contact-form button {
+.contact-form button,
+.download-qr-btn {
   font-size: 18px;
   background-color: var(--color);
   padding: 10px 30px;
@@ -139,10 +145,12 @@ body {
   max-width: max-content;
 }
 
-.contact-form button:hover {
+.contact-form button:hover,
+.download-qr-btn:hover {
   transform: scale(1.02);
 }
-.contact-form button:active {
+.contact-form button:active,
+.download-qr-btn:active {
   transform: scale(0.95);
 }
 
@@ -227,6 +235,6 @@ body {
     padding: 15px 20px;
   }
   .contact-form {
-    width: 70%;
+    width: 90%;
   }
 }

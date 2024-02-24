@@ -37,10 +37,27 @@ function Form() {
   const [url, setUrl] = useState("");
   const [qr, setQr] = useState("/site.png");
 
-  function handleForm(e) {
+  async function handleForm(e) {
     e.preventDefault();
     if (!url) return;
-    setQr(url);
+    const response = await fetch(
+      `https://api.qrserver.com/v1/create-qr-code/?data=${url}`
+    );
+    const blob = await response.blob();
+    const src = URL.createObjectURL(blob);
+    setQr(src);
+  }
+
+  function handleQrDownload() {
+    const qrDataUrl = qr;
+
+    if (!qrDataUrl) return;
+
+    const link = document.createElement("a");
+    link.href = qrDataUrl;
+    link.download = "qr.png";
+    link.click();
+    URL.revokeObjectURL(qrDataUrl);
   }
 
   return (
@@ -53,7 +70,10 @@ function Form() {
           placeholder="Place your link here.."
         />
       </form>
-      <QRCode value={qr} className="qr" />
+      <img src={qr} className="qr" alt="Qr Code generated" />
+      <button className="download-qr-btn" onClick={handleQrDownload}>
+        Download
+      </button>
     </div>
   );
 }
