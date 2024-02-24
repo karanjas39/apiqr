@@ -1,5 +1,4 @@
 import { useState } from "react";
-import QRCode from "react-qr-code";
 import "./App.css";
 
 export default function App() {
@@ -46,6 +45,7 @@ function Form() {
     const blob = await response.blob();
     const src = URL.createObjectURL(blob);
     setQr(src);
+    setUrl("");
   }
 
   function handleQrDownload() {
@@ -69,10 +69,13 @@ function Form() {
           onChange={(e) => setUrl(e.target.value)}
           placeholder="Place your link here.."
         />
+        <button onClick={handleForm} className="create-qr-btn">
+          Create QR Code
+        </button>
       </form>
       <img src={qr} className="qr" alt="Qr Code generated" />
       <button className="download-qr-btn" onClick={handleQrDownload}>
-        Download
+        Download QR Code
       </button>
     </div>
   );

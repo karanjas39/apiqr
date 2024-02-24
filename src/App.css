@@ -60,6 +60,12 @@ body {
 }
 
 /* FORM */
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
 .form-container {
   margin: 0 auto;
@@ -132,7 +138,8 @@ body {
 }
 
 .contact-form button,
-.download-qr-btn {
+.download-qr-btn,
+.create-qr-btn {
   font-size: 18px;
   background-color: var(--color);
   padding: 10px 30px;
@@ -146,11 +153,13 @@ body {
 }
 
 .contact-form button:hover,
-.download-qr-btn:hover {
+.download-qr-btn:hover,
+.create-qr-btn:hover {
   transform: scale(1.02);
 }
 .contact-form button:active,
-.download-qr-btn:active {
+.download-qr-btn:active,
+.create-qr-btn:active {
   transform: scale(0.95);
 }
 
@@ -196,7 +205,7 @@ body {
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 .stay-touch span:last-child {
