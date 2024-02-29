@@ -192,7 +192,7 @@ function Footer() {
       </p>
       <p>
         Copyright &copy; {new Date().getFullYear()}| Developed and Designed by
-        <a href="#">Jaskaran Singh</a>
+        <a href="https://developerjaskaran.netlify.app/">Jaskaran Singh</a>
       </p>
     </div>
   );
